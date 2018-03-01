@@ -67,7 +67,7 @@ public class WaterPokemon extends Pokemon {
         if (opponent.pokeType == PokemonType.WATER) {
             return false;
         }
-        if (specProb > (int) Math.random()) {
+        if (specProb > Math.random()) {
             System.out.print(this.specialtyAttack);
             opponent.setHitPoints(0);
             return true;
