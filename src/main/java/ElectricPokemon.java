@@ -68,7 +68,9 @@ public class ElectricPokemon extends Pokemon {
             return false;
         }
         if (specProb > (int) Math.random()) {
-             
+             System.out.print(this.specialtyAttack);
+             opponent.setHitPoints(0);
+             return true;
         }
 
     }
