@@ -58,9 +58,7 @@ public class FirePokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        int attackPoint = (int) Math.random() * getAttackLevel();
-        int defensePoint = (int) Math.random() * getDefenseLevel();
-        if (attackPoint - defensePoint >= opponent.getHitPoints()) {
+        if (super.attack(opponent)) {
             return true;
         }
         if (opponent.pokeType == PokemonType.FIRE) {
@@ -71,7 +69,7 @@ public class FirePokemon extends Pokemon {
             opponent.setHitPoints(0);
             return true;
         }
-
+        return false;
     }
 
 }

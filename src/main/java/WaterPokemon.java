@@ -61,9 +61,7 @@ public class WaterPokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        int attackPoint = (int) Math.random() * getAttackLevel();
-        int defensePoint = (int) Math.random() * getDefenseLevel();
-        if (attackPoint - defensePoint >= opponent.getHitPoints()) {
+        if (super.attack(opponent)) {
             return true;
         }
         if (opponent.pokeType == PokemonType.WATER) {
@@ -74,7 +72,7 @@ public class WaterPokemon extends Pokemon {
             opponent.setHitPoints(0);
             return true;
         }
-
+        return false;
     }
 
 
